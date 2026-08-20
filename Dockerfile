@@ -16,11 +16,8 @@ COPY --from=builder /app/target/system-0.0.1-SNAPSHOT.jar app.jar
 # Buka port 8080
 EXPOSE 8080
 
-# Set default MongoDB URI (can be overridden by platform env vars)
+# Set default MongoDB URI
 ENV HOSPITAL_MONGODB_URI="mongodb+srv://rakhadaivanda_db_user:pcwRoi9oPED1sv3j@cluster0.ukgyx1n.mongodb.net/hospital_db?retryWrites=true&w=majority&appName=Cluster0"
 
 # Jalankan aplikasinya - paksa URI MongoDB via JVM property (prioritas tertinggi)
-ENTRYPOINT ["java", \
-  "-Dspring.data.mongodb.uri=mongodb+srv://rakhadaivanda_db_user:pcwRoi9oPED1sv3j@cluster0.ukgyx1n.mongodb.net/hospital_db?retryWrites=true&w=majority&appName=Cluster0", \
-  "-Dspring.data.mongodb.database=hospital_db", \
-  "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb+srv://rakhadaivanda_db_user:pcwRoi9oPED1sv3j@cluster0.ukgyx1n.mongodb.net/hospital_db?retryWrites=true&w=majority&appName=Cluster0", "-Dspring.data.mongodb.database=hospital_db", "-jar", "app.jar"]
