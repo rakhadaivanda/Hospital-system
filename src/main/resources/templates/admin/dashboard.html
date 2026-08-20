@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('Admin Dashboard')"></head>
+<body>
+
+    <!-- Sidebar -->
+    <div th:replace="layout :: admin_sidebar('dashboard')"></div>
+
+    <!-- Main Content -->
+    <div class="main-content animate-fade-in">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold">Dashboard Overview</h2>
+            <div class="badge bg-primary rounded-pill px-3 py-2">
+                <i class="fa-solid fa-user-shield me-1"></i> Admin Access
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Stats Cards -->
+            <div class="col-md-3">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="h6 text-muted mb-0">Total Patients</div>
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold mb-0" th:text="${totalPatients}">0</h2>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="h6 text-muted mb-0">Total Rooms</div>
+                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold mb-0" th:text="${totalRooms}">0</h2>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="h6 text-muted mb-0">Active Appointments</div>
+                        <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold mb-0">0</h2>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="h6 text-muted mb-0">Pending Bills</div>
+                        <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold mb-0">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-8">
+                <div class="glass-card p-4 h-100">
+                    <h5 class="fw-bold mb-4">Recent Appointments</h5>
+                    <div class="text-center text-muted py-5">
+                        <i class="fa-solid fa-calendar-xmark fa-3x mb-3 text-light"></i>
+                        <p>No recent appointments found.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 h-100">
+                    <h5 class="fw-bold mb-4">Quick Actions</h5>
+                    <div class="d-grid gap-3">
+                        <a href="/admin/patients/new" class="btn btn-outline-primary text-start rounded-3"><i class="fa-solid fa-plus me-2"></i> Add Patient</a>
+                        <a href="/admin/rooms" class="btn btn-outline-success text-start rounded-3"><i class="fa-solid fa-door-open me-2"></i> Manage Rooms</a>
+                        <a href="/admin/pharmacy/new" class="btn btn-outline-info text-start rounded-3"><i class="fa-solid fa-pills me-2"></i> Add Medicine</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('Patient Dashboard')"></head>
+<body>
+
+    <!-- Navbar for Patient -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/patient/dashboard"><i class="fa-solid fa-staff-snake me-2"></i>CareHub Patient</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item me-3">
+                        <span class="fw-medium text-muted">Hello, <span th:text="${user.username}">User</span>!</span>
+                    </li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 animate-fade-in">
+        <h2 class="fw-bold mb-4">My Dashboard</h2>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="glass-card p-4 text-center h-100 transition-hover">
+                    <i class="fa-solid fa-calendar-plus fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-bold">Book Appointment</h5>
+                    <p class="text-muted small">Schedule a visit with our specialized doctors.</p>
+                    <a href="/patient/appointments" class="btn btn-primary-custom w-100 mt-2">Book Now</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 text-center h-100 transition-hover">
+                    <i class="fa-solid fa-bed-pulse fa-3x text-success mb-3"></i>
+                    <h5 class="fw-bold">Book a Room</h5>
+                    <p class="text-muted small">Request an inpatient room for your stay.</p>
+                    <a href="/patient/rooms" class="btn btn-outline-success w-100 mt-2">View Rooms</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 text-center h-100 transition-hover">
+                    <i class="fa-solid fa-prescription-bottle-medical fa-3x text-info mb-3"></i>
+                    <h5 class="fw-bold">My Prescriptions</h5>
+                    <p class="text-muted small">View medicines prescribed by your doctor.</p>
+                    <a href="/patient/prescriptions" class="btn btn-outline-info w-100 mt-2">View History</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <h4 class="fw-bold mb-3">Recent Activity</h4>
+        <div class="glass-card p-4">
+            <div class="text-center text-muted py-5">
+                <i class="fa-solid fa-folder-open fa-3x mb-3 text-light"></i>
+                <p>No recent activity found. Start by booking an appointment!</p>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>

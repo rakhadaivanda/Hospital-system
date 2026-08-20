@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('Book Room')"></head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-glass sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/patient/dashboard"><i class="fa-solid fa-staff-snake me-2"></i>CareHub Patient</a>
+            <div class="ms-auto d-flex align-items-center">
+                <a href="/patient/dashboard" class="btn btn-sm btn-outline-primary me-3">Back to Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 animate-fade-in">
+        <h2 class="fw-bold mb-4">Inpatient Room Booking</h2>
+        <div class="glass-card p-4 text-center py-5">
+            <i class="fa-solid fa-bed fa-4x text-muted mb-3"></i>
+            <h4 class="text-muted">Room Booking Module</h4>
+            <p>Browse available rooms and request an inpatient stay.</p>
+        </div>
+    </div>
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>

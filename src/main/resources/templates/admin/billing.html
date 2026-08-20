@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('Billing Management')"></head>
+<body>
+    <div th:replace="layout :: admin_sidebar('billing')"></div>
+    <div class="main-content animate-fade-in">
+        <h2 class="fw-bold mb-4">Billing & Invoices</h2>
+        <div class="glass-card p-4 text-center">
+            <i class="fa-solid fa-file-invoice-dollar fa-4x text-danger mb-3"></i>
+            <h4 class="text-muted">Financial Module</h4>
+            <p>Generate patient bills, record payments, and track outstanding balances.</p>
+        </div>
+    </div>
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('Welcome')"></head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-glass fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fa-solid fa-staff-snake me-2"></i>CareHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary-custom ms-2" href="/register">Register as Patient</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 120px;">
+        <div class="row align-items-center min-vh-75 animate-fade-in">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4" style="line-height: 1.2;">
+                    Advanced Healthcare <br>
+                    <span class="text-primary">At Your Fingertips</span>
+                </h1>
+                <p class="lead text-muted mb-5">
+                    Experience seamless hospital management, quick appointments, and access to your medical history with CareHub.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="/register" class="btn btn-primary-custom btn-lg"><i class="fa-solid fa-user-plus me-2"></i> Join Now</a>
+                    <a href="/login" class="btn btn-outline-primary btn-lg rounded-4"><i class="fa-solid fa-right-to-bracket me-2"></i> Sign In</a>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                <!-- Using a nice illustration placeholder or gradient shape -->
+                <div class="glass-card p-5" style="background: linear-gradient(45deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1)); border-radius: 50%;">
+                    <i class="fa-solid fa-heart-pulse text-primary" style="font-size: 15rem; opacity: 0.8; filter: drop-shadow(0 10px 15px rgba(79,70,229,0.3));"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="layout :: scripts"></div>
+</body>
+</html>
